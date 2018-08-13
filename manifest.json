@@ -1,0 +1,26 @@
+{
+	"manifest_version": 2,
+	"name": "youtube like",
+	"version": "1.0",
+	"description": "show the youtube likes",
+	"page_action": {
+		"defalut_popup": "popup.html",
+		"defalut_title": "youtube likes"
+	},
+	"background":{
+		"scripts": ["eventPage.js"],
+		"persistent": false
+	},
+
+	"content_scripts": [
+		{
+				"matches": ["https://www.youtube.com/*"],
+				"js": ["content.js", "jquery-3.3.1.min.js"]
+		}
+	],
+
+	"permissions": [
+		"tabs",
+		"https://www.youtube.com/*"
+	]
+}
